@@ -1,0 +1,14 @@
+server:
+  port: 8601
+  tomcat:
+    uri-encoding: UTF-8
+  shutdown: graceful
+
+logging:
+  config: classpath:logback.xml
+
+spring:
+  application:
+    name: presentation-service
+  lifecycle:
+    timeout-per-shutdown-phase: 15S

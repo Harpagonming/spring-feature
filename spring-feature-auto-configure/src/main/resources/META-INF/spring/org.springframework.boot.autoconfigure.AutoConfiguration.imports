@@ -1,0 +1,2 @@
+#从Spring Boot 2.7开始，就不推荐使用META-INF/spring.factories的方式了，在Spring3中完全移除了对该文件的支持
+com.zhenming.demo.spring.feature.auto.configure.initial.InitializationService

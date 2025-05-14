@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <!-- 服务名 -->
+    <property name="SERVICE_NAME" value="/presentation"/>
+    <!-- 日志存放路径 -->
+    <property name="LOG_PATH" value="./logs"/>
+    <!-- 历史日志存放路径 -->
+    <property name="LOG_HISTORY_PATH" value="/history"/>
+    <!-- 日志输出格式 -->
+    <property name="LOG_PATTERN" value="%d{HH:mm:ss.SSS} %5p [%thread] %-5level %logger{30} - [%line] - %msg%n"/>
+
+    <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>${LOG_PATTERN}</pattern>
+        </encoder>
+    </appender>
+
+    <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${LOG_PATH}${SERVICE_NAME}.log</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>${LOG_PATH}${LOG_HISTORY_PATH}${SERVICE_NAME}.%d{yyyy-MM-dd}.log</fileNamePattern>
+            <!-- 保留 185 天的日志文件 网络安全法要求日志保存不少于六个月 -->
+            <maxHistory>185</maxHistory>
+        </rollingPolicy>
+        <encoder>
+            <pattern>${LOG_PATTERN}</pattern>
+        </encoder>
+    </appender>
+
+    <logger name="com.eci" level="info"/>
+
+    <root level="info">
+        <appender-ref ref="CONSOLE"/>
+        <appender-ref ref="FILE"/>
+    </root>
+</configuration>
