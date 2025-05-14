@@ -9,9 +9,9 @@
         <version>${revision}</version>
     </parent>
 
-    <artifactId>spring-feature-presentation</artifactId>
+    <artifactId>spring-feature-exception-handler</artifactId>
 
-    <description>为了便于演示module中的功能，建立该模块</description>
+    <description>对controller抛出异常统一管理拦截，避免返回500</description>
 
     <dependencies>
         <dependency>
@@ -22,24 +22,6 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>com.zhenming.demo.spring</groupId>
-            <artifactId>spring-feature-auto-configure</artifactId>
-            <version>${revision}</version>
-        </dependency>
-
-        <dependency>
-            <groupId>com.zhenming.demo.spring</groupId>
-            <artifactId>spring-feature-import-selector</artifactId>
-            <version>${revision}</version>
-        </dependency>
-
-        <dependency>
-            <groupId>com.zhenming.demo.spring</groupId>
-            <artifactId>spring-feature-exception-handler</artifactId>
-            <version>${revision}</version>
         </dependency>
     </dependencies>
 

@@ -13,6 +13,7 @@
         <module>spring-feature-import-selector</module>
         <module>spring-feature-presentation</module>
         <module>spring-feature-auto-configure</module>
+        <module>spring-feature-exception-handler</module>
     </modules>
 
     <packaging>pom</packaging>
@@ -45,6 +46,7 @@
 
         <spring-boot.version>3.2.9</spring-boot.version>
         <maven-surefire-plugin.version>3.1.2</maven-surefire-plugin.version>
+        <maven-compiler-plugin.version>3.11.0</maven-compiler-plugin.version>
     </properties>
 
     <build>
@@ -77,6 +79,15 @@
                         </execution>
                     </executions>
                     <version>${spring-boot.version}</version>
+                </plugin>
+
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    <version>${maven-compiler-plugin.version}</version>
+                    <configuration>
+                        <parameters>true</parameters>
+                    </configuration>
                 </plugin>
 
                 <!-- 跳过test -->
